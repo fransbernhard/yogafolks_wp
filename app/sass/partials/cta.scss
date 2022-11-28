@@ -1,0 +1,66 @@
+.cta {
+    background-color: #6a9b97;
+    padding: 60px 40px 40px;
+
+    &__wrapper {
+        display: block;
+        color: $yellow;
+
+        @include media(md) { 
+            display: flex;
+            gap: 40px;
+            max-width: 1230px;
+            margin: 0 auto;
+            color: $yellow;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        margin-bottom: 30px;
+    
+        @include media(md) { 
+            width: 50%;
+            object-fit: contain;
+        }
+    }
+
+    &__label {
+        text-transform: uppercase;
+    }
+
+    &__title {
+        font-size: 40px;
+        margin: 10px 0 40px 0;
+
+        @include media(md) { 
+            font-size: 60px;
+            margin: 10px 0 40px 0;
+        }
+    }
+
+    &__text {
+        margin-bottom: 80px;
+
+        @include media(md) { 
+            margin-bottom: 80px;
+            max-width: 80%;
+        }
+    }
+
+    &__btn {
+        display: inline-flex;
+        gap: 20px;
+    }
+    
+    &__btn_image {
+        max-height: 100px;
+    }
+}
+
+
+
+
+
+
+

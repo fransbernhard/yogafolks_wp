@@ -1,0 +1,124 @@
+.menu {
+    &--mobile {
+        display: none;
+        background-color: $darkGreen;
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        height: 100vh;
+        z-index: 999;
+        overflow: hidden;
+        overflow-y: auto;
+        padding-top: 100px;
+
+        .header--active & {
+            display: block!important;
+        }
+        
+        @include media(md) { 
+            display: none;
+        }
+
+        li a {
+            font-family: futura-pt, arial, sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            font-style: normal;
+            padding: 15px 0;
+            letter-spacing: 1px;
+            display: block;
+            width: 100%;
+            color: $yellow;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+
+    &--desktop {
+        display: none;
+        margin-right: 10px;
+
+        @include media(md) { 
+            display: block;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        li a {
+            font-family: futura-pt, arial, sans-serif;
+            font-weight: $weightNormal;
+            font-size: 18px;
+            color: $darkPurple;
+            padding-bottom: 5px;
+            letter-spacing: .8px;
+            display: block;
+            text-align: right;
+            white-space: nowrap;
+            padding: 20px 15px;
+
+            .page-template-template-membership &,
+            .page-template-template-activities & {
+                color: none;
+            }
+        }
+    
+    }
+    
+    &__hamburger {
+        .header--active & {
+            z-index: 9999;
+
+            span:nth-child(1) {
+                transform: rotate(40deg);
+                top: -5px;
+                left: 8px;
+                width: 40px;
+            }
+
+            span:nth-child(2) {
+                width: 0%;
+                opacity: 0;
+            }
+
+            span:nth-child(3) {
+                transform: rotate(-40deg);
+                left: 12px;
+                width: 40px;
+            }
+        }
+
+        @include media(md) { 
+            display: none;
+        }
+    }
+
+    &__bar {
+        width: 40px;
+        height: 8px;
+        cursor: pointer;
+        background: $purple;
+        margin-bottom: 4px;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+        display: block;
+
+        &:nth-child(1) {
+            top: 18px;
+            transform-origin: left center;
+        }
+
+        &:nth-child(2) {
+            top: 18px;
+            transform-origin: left center;
+        }
+
+        &:nth-child(3) {
+            top: 36px;
+            transform-origin: left center;
+        }
+    }
+}

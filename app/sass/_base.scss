@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    width: 100vw;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: none;
+    max-width: none;
+}
+
+body.home,
+body.page-template-template-treatments {
+    background-color: $yellow;
+}
+
+body.page-template-template-membership,
+body.page-template-template-activities,
+body.error404 {
+    background-color: $darkPurple;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: $fontFuturaBold;
+    font-weight: $weightBold;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+h1 {
+    @extend %h1;
+}
+
+p {
+    @extend %body-copy-18;
+}
+
+a {
+    @extend %body-copy-18;
+    text-decoration: none;
+    color: black;
+}
+
+#sp-ea-1310.sp-easy-accordion > .sp-ea-single > .sp-collapse > .ea-body > p {
+    color: #3a3468 !important;
+}

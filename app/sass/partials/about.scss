@@ -1,0 +1,106 @@
+.about {
+    background-color: $darkGreen;
+
+    &__wrapper {
+        padding: 60px 15px 40px;
+
+        @include media(md) { 
+            padding: 60px 0 40px;
+        }
+    }
+
+    &__border {
+        margin: 0 auto;
+        position: relative;
+
+        @include media(md) { 
+            border: 20px solid $green;
+            width: 80vw;
+            max-width: $maxWidth;
+            padding: 60px 0;
+        }
+
+        &::after {
+            content: "";
+            display: none;
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background-image: url("./img/logo_yellow.png");
+            background-position: right;
+            background-size: 90%;
+            background-repeat: no-repeat;
+            background-color: $darkGreen;
+            width: 130px;
+            height: 75px;
+
+            @include media(md) { 
+                display: block;
+            }
+        }
+    }
+
+    &__title {
+        text-align: center;
+        color: $yellow;
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    
+        @include media(md) { 
+            font-size: 72px;
+        }
+    }
+
+    &__image {
+        max-width: 100%;
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
+
+        @include media(md) { 
+            max-width: 90%;
+        }
+        
+        @include media(lg) { 
+            max-width: 600px;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        
+        @include media(md) { 
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: $yellow;
+        }
+    }
+
+    &__contact {
+        &__map {
+            display: block;
+            object-fit: contain;
+            width: 100%;
+            margin: auto;
+            margin-bottom: 20px;
+    
+            @include media(md) { 
+                width: 800px;
+            }
+        }
+    
+        &__information {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: $yellow;
+        }
+    }
+}

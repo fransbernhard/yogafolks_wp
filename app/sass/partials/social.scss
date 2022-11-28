@@ -1,0 +1,45 @@
+.social {
+    position: fixed;
+    z-index: 999;
+    display: none;
+    right: 10px;
+
+    @include media(md) {
+        display: block;
+        top: 40vh;
+    }
+
+    .header--active & {
+        display: block!important;
+        top: auto;
+        bottom: 10px;
+
+        @include media(md) {
+            bottom: auto;
+        }
+    }
+
+    &__item {
+        width: 36px;
+        height: 36px;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+
+        @include media(md) { 
+            display: block;
+            width: 24px;
+            height: 24px;
+            margin-bottom: 10px;
+        }
+
+        &--facebook {
+            background-image: url("./img/purple-facebook.png");
+        }
+
+        &--instagram{
+            background-image: url("./img/purple-instagram.png");
+        }
+    }
+}

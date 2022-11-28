@@ -1,0 +1,122 @@
+.introduction {
+    &__wrapper {
+        padding: 150px 15px 40px;
+
+        @include media(md) { 
+            padding: 80px 0 60px;
+        }
+    }
+    
+    &__border {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include media(md) { 
+            margin: 0 auto;
+            position: relative;
+            border: 20px solid $green;
+            width: 80vw;
+            max-width: $maxWidth;
+            padding: 60px 0 80px;
+        }
+
+        &::after {
+            content: "";
+            display: none;
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background-image: url("./img/logo_purple.png");
+            background-color: $yellow;
+            background-position: right;
+            background-size: 90%;
+            background-repeat: no-repeat;
+            width: 130px;
+            height: 75px;
+
+            @include media(md) { 
+                display: block;
+            }
+        }
+    }
+
+    &__image {
+        display: flex;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        margin-top: -20px;
+
+        @include media(md) { 
+            width: 350px;
+            height: 350px;
+            max-width: 100%;
+        }
+    }
+
+    &__description {
+        max-width: 100%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+
+        @include media(md) { 
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        p {
+            @extend %body-copy-18;
+            font-weight: $weightMedium;
+            text-align: center;
+        }
+    }
+    
+    &__links {
+        width: 100%;
+        max-width: 350px;
+        margin: auto;
+
+        @include media(md) { 
+            max-width: 100%;
+            width: auto;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__link {
+        font-family: futura-pt, arial, sans-serif;
+        font-size: 24px;
+        font-weight: $weightNormal;
+        letter-spacing: 1.1;
+        text-align: center;
+        color: $yellow;
+        background-color: $purple;
+        display: block;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: background-color .1s ease-in;
+
+        &:hover {
+            background-color: $darkGreen;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+
+        @include media(md) { 
+            width: 230px;
+            padding: 20px;
+            display: inline-block;
+            margin-right: 25px;
+            margin-bottom: 0;
+        }
+    }
+}

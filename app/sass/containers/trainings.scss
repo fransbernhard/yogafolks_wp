@@ -1,0 +1,102 @@
+.trainings {
+    $root: &;
+
+    background-color: $purple;
+    min-height: 100vh;
+
+    &__wrapper {
+        max-width: $maxWidth;
+        margin: 0 auto;
+        padding: 120px 15px 40px;
+
+        @include media(md) {
+            padding: 120px 15px 60px;
+        }
+    }
+
+    &__title {
+        @extend %h1;
+        text-align: center;
+        color: $yellow;
+        margin-bottom: 25px;
+
+        @include media(md) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__text {
+        max-width: 600px;
+        margin: 0 auto;
+
+        p {
+            color: $yellow;
+            text-align: center;
+        }
+    }
+
+    &__list {
+        @include media(sm) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -14px;
+        }
+    }
+
+    &__item {
+        $itemRoot: &;
+
+        width: 100%;
+        flex: 0 1 auto;
+        margin-left: 14px;
+        margin-bottom: 14px;
+        border-radius: 5px;
+        transition: box-shadow .3s ease-in-out;
+        background-color: $green;
+
+        @include media(sm) {
+            width: calc(50% - 14px);
+        }
+
+        @include media(md) {
+            width: calc(33% - 14px);
+        }
+
+        @include media(xl) {
+            width: calc(20% - 14px);
+        }
+
+        &:hover {
+            box-shadow: 4px 4px 10px rgba(33,33,33,.2);
+
+            #{$itemRoot}__image {
+                transform: scale(1.05);
+            }
+        }
+
+        &__image-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 2px 2px 0 0;
+        }
+
+        &__image {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &__title {
+            margin-bottom: 0;
+        }
+
+        &__content {
+            position: relative;
+            padding: 36px 15px 15px;
+        }
+    }
+}

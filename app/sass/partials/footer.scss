@@ -1,0 +1,106 @@
+.footer {
+    &__wrapper {
+        display: block;
+        padding: 20px;
+        background-color: $yellow;
+
+        @include media(md) { 
+            display: flex;
+            justify-content: space-between;
+            background-color: $yellow;
+        }
+    }
+
+    &__column {
+        @include media(md) {
+            width: calc(100% / 3);
+        }   
+
+        &--left {
+            @include media(md) {
+                display: flex;
+            }
+        }
+
+        &--middle {
+            margin-bottom: 20px;
+
+            @include media(md) {
+                margin-bottom: 0;
+                align-self: center;
+                text-align: center;
+            }
+        }
+
+        &--right {
+            @include media(md) {
+                display: flex;
+                justify-content: end;
+                align-items: end;
+            }
+
+            a:first-of-type {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__logo {
+        display: inline-block;
+        padding-right: 30px;
+    }
+
+    &__logo-image {
+        padding-bottom: 20px;
+        max-width: 60px;
+
+        @include media(md) {
+            padding-bottom: 0;
+        }
+    }
+
+    &__logo-text {
+        color: $darkPurple; 
+        padding-right: 20px;
+    }
+
+    &__adress {
+        color: $darkPurple; 
+        padding-right: 20px;
+
+        &--street {
+            font-weight: 700;
+        }
+
+        &--org-nr {
+            font-style: italic;
+        }
+    }
+
+    &__link {
+        text-decoration: underline;
+        color: $darkPurple;
+        display: block;
+
+        &--mail {
+            @include media(md) {
+                padding-bottom: 10px;
+            }
+        }
+    
+        &--terms {
+            @include media(md) {
+                display: inline-block;
+                border-right: 1px solid black;
+                padding-right: 10px;
+                margin-right: 10px;
+            }
+        }
+    
+        &--privacy {
+            @include media(md) {
+                display: inline-block;
+            }
+        }
+    }
+}

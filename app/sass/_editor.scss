@@ -1,0 +1,32 @@
+// #wpadminbar {
+//     display: none;
+
+//     @include media(md) { 
+//         display: block;
+//         z-index: 99999999;
+//     }
+// }
+
+body {
+    margin-top: -46px !important;
+
+    @include media(md) { 
+        margin-top: 0 !important;
+    }
+}
+
+.header__hamburger {
+    @include media(md) { 
+        .logged-in & {
+            top: 52px !important;
+        }
+    }
+}
+
+.header__logo {
+    @include media(md) { 
+        .logged-in & {
+            top: 32px !important;
+        }
+    }
+}

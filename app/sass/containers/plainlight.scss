@@ -1,0 +1,151 @@
+.plainlight {
+    $root: &;
+
+    background-color: $purple;
+    min-height: 100vh;
+
+    &__wrapper {
+        max-width: $maxWidth;
+        margin: 0 auto;
+        padding: 150px 15px 60px;
+    }
+
+    &__title {
+        @extend %h1;
+        text-align: center;
+        color: $yellow;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        max-width: 600px;
+        margin: 0 auto 20px;
+
+        p {
+            color: $yellow;
+            text-align: center;
+        }
+    }
+
+    &__filter {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        margin-top: 30px;
+
+        @include media(md) {
+            margin-top: 40px;
+        }
+
+        &__link {
+            @extend %body-copy-16;
+            display: block;
+            padding: 15px 25px;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            background-color: white;
+            text-transform: uppercase;
+            border-radius: 5px;
+            letter-spacing: 1.2px;
+
+            &--active {
+                border: none;
+                background-color: $yellow;
+            }
+        }
+    }
+
+    &__list {
+        @include media(sm) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -14px;
+        }
+    }
+
+    &__item {
+        $itemRoot: &;
+
+        width: 100%;
+        flex: 0 1 auto;
+        margin-bottom: 14px;
+        border-radius: 5px;
+        transition: box-shadow .3s ease-in-out;
+        background-color: $green;
+        position: relative;
+
+        @include media(sm) {
+            width: calc(50% - 14px);
+            margin-left: 14px;
+        }
+
+        @include media(md) {
+            width: calc(33% - 14px);
+        }
+
+        @include media(xl) {
+            width: calc(20% - 14px);
+        }
+
+        &:hover {
+            box-shadow: 4px 4px 10px rgba(33,33,33,.2);
+
+            #{$itemRoot}__image {
+                transform: scale(1.05);
+            }
+        }
+
+        &__image-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 2px 2px 0 0;
+        }
+
+        &__image {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &__title {
+            @extend %h4;
+            margin-bottom: 0;
+        }
+
+        &__content {
+            position: relative;
+            padding: 36px 15px 15px;
+        }
+
+        &__labels {
+            position: absolute;
+            width: calc(100% - 30px);
+            top: 10px;
+            left: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__label {
+            display: block;
+            @extend %label;
+        }
+
+        &__date {
+            display: block;
+            @extend %label;
+        }
+
+        &__link {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}
