@@ -1,17 +1,17 @@
 'use strict'
 /* global require */
 
-var gulp            = require('gulp'),
-    sass            = require('gulp-sass'),
-    autoprefixer    = require('gulp-autoprefixer'),
-    uglify          = require('gulp-uglify'),
-    rename          = require('gulp-rename'),
-    imagemin        = require('gulp-imagemin'),
-    cache           = require('gulp-cache'),
-    babel           = require('gulp-babel'),
-    newer           = require('gulp-newer');
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('node-sass'));
+const autoprefixer = require('gulp-autoprefixer');
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
+const imagemin = require('gulp-imagemin');
+const cache = require('gulp-cache');
+const babel = require('gulp-babel');
+const newer = require('gulp-newer');
 
-var paths = {
+const paths = {
     style: {
         src: 'app/sass/',
         output: 'dist/',
@@ -48,20 +48,21 @@ gulp.task('JS', () => {
         })
 });
 
-gulp.task('IMAGES', () => {
-    gulp.src(paths.img.src)
+gulp.task('IMAGES', (done) => {
+    return gulp.src(paths.img.src)
         .pipe(newer(paths.img.output))
         .pipe(cache(imagemin({
             optimizationLevel: 3,
             progressive: true,
             interlaced: true
         })))
-        .pipe(gulp.dest(paths.img.output));
+        .pipe(gulp.dest(paths.img.output))
+        .on('end', done); 
 });
 
 gulp.task('WATCH', () => {
-    gulp.watch(paths.style.src + '**/*.scss', ['CSS']);
-    gulp.watch(paths.script.src, ['JS']);
+    gulp.watch(paths.style.src + '**/*.scss', gulp.series('CSS'));
+    gulp.watch(paths.script.src, gulp.series('JS'));
 });
 
-gulp.task('default', ['CSS', 'JS', 'IMAGES', 'WATCH']);
+gulp.task('default', gulp.series('CSS', 'JS', 'IMAGES', 'WATCH')); 

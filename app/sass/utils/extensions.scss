@@ -52,7 +52,7 @@
 %h4 {
     font-family: $fontFuturaBold;
     font-size: 2.4rem;
-    line-height: (32 / 30);
+    line-height: 1.2;
 
     @include media(md) {
         font-size: 3rem;

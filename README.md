@@ -2,7 +2,7 @@
 Wordpress theme for Stockholms based yoga studio Yoga Folks.
 
 ## Installation
-*Project uses Node v 10.*
+*Project uses Node v16*
 
 Clone the theme and add it to your Wordpress theme folder in you're local repository. Install dependencies:
 ```
