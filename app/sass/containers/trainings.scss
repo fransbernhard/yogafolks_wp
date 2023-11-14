@@ -98,5 +98,24 @@
             position: relative;
             padding: 36px 15px 15px;
         }
+
+        &__labels {
+            position: absolute;
+            width: calc(100% - 30px);
+            top: 10px;
+            left: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__label {
+            display: block;
+            @extend %label;
+        }
+
+        &__date {
+            display: block;
+            @extend %label;
+        }
     }
 }

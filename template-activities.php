@@ -67,6 +67,7 @@
             <div class="activities__list">
                 <?php foreach($items as $item): ?>
                     <?php
+                        $link = get_field('external_link', $item->ID) ?: get_permalink($item->ID);
                         $start_date = get_field('start_date', $item->ID);
                         $itemDate = strtotime($start_date);
                         $date = date("j/n", $itemDate);
@@ -94,7 +95,7 @@
                         </div>
                         <a
                             class="activities__item__link"
-                            href=<?= get_permalink($item->ID); ?>
+                            href=<?= $link; ?>
                         ></a>
                     </div>
                 <?php endforeach; ?>

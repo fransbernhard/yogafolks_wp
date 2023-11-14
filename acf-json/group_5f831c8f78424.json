@@ -1,11 +1,12 @@
 {
     "key": "group_5f831c8f78424",
-    "title": "Posttype: Activity",
+    "title": "Posts",
     "fields": [
         {
             "key": "field_5f831cd56fbcb",
             "label": "Start date",
             "name": "start_date",
+            "aria-label": "",
             "type": "date_picker",
             "instructions": "",
             "required": 1,
@@ -23,6 +24,7 @@
             "key": "field_5f831ce1dd9ce",
             "label": "End date",
             "name": "end_date",
+            "aria-label": "",
             "type": "date_picker",
             "instructions": "",
             "required": 1,
@@ -40,6 +42,7 @@
             "key": "field_5f831cf0b153b",
             "label": "Teacher",
             "name": "teacher",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -54,6 +57,23 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_6553d0528e130",
+            "label": "External link",
+            "name": "external_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Enter url if you want post to be external link",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "External link"
         }
     ],
     "location": [
@@ -63,6 +83,13 @@
                 "operator": "==",
                 "value": "activity"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "training"
+            }
         ]
     ],
     "menu_order": 0,
@@ -71,7 +98,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1603312741
+    "show_in_rest": 0,
+    "modified": 1699995423
 }

@@ -31,13 +31,14 @@
         </div>      
         <?php if(!empty($items)): ?>
             <div class="trainings__list">
-                <?php foreach($items as $item): ?>
-                    <?php
-                        $start_date = get_field('start_date', $item->ID);
-                        $itemDate = strtotime($start_date);
-                        $date = date("j/n", $itemDate);
-                    ?>
-                    <a class="trainings__item" href=<?= get_permalink($item->ID); ?> >
+                <?php foreach($items as $item):
+                    $link = get_field('external_link', $item->ID) ?: get_permalink($item->ID);
+                    $start_date = get_field('start_date', $item->ID);
+                    $itemDate = strtotime($start_date);
+                    $date = date("j/n", $itemDate);
+                    $teacher = get_field('teacher', $item->ID);
+                ?>
+                    <a class="trainings__item" href=<?= $link; ?> >
                         <div class="trainings__item__image-container">
                             <div 
                                 style="background-image: url(<?= get_the_post_thumbnail_url($item->ID, "large"); ?>);"
@@ -45,8 +46,17 @@
                             ></div>
                         </div>
                         <div class="trainings__item__content">
-                            <span class="trainings__item__date"><?= $date; ?></span> 
-                            <h2 class="trainings__item__title"><?= get_the_title($item->ID); ?></h2>
+                            <div class="trainings__item__labels">
+                                <span class="trainings__item__label">
+                                    <?= $teacher; ?>
+                                </span>
+                                <span class="trainings__item__date">
+                                    <?= $date; ?>
+                                </span>
+                            </div>
+                            <h2 class="trainings__item__title">
+                                <?= get_the_title($item->ID); ?>
+                            </h2>
                         </div>
                     </a>
                 <?php endforeach; ?>
